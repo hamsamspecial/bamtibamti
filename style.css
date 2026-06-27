@@ -352,6 +352,245 @@ button {
   display: none !important;
 }
 
+/* =====================================================
+   AI 학생 상담 전략 도우미 패널
+   ===================================================== */
+.ai-counseling-panel {
+  margin-top: 36px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.ai-panel-header {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), transparent 60%),
+    var(--surface-strong);
+}
+
+.ai-panel-title {
+  margin: 4px 0 8px;
+  font-size: clamp(20px, 3vw, 28px);
+  letter-spacing: -0.3px;
+}
+
+.ai-panel-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.ai-panel-body {
+  display: grid;
+  gap: 18px;
+  padding: 24px 28px;
+}
+
+/* 선택된 학생 영역 */
+.ai-selected-student {
+  padding: 14px 18px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ai-no-selection {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.ai-student-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ai-chip-alias {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.ai-chip-real {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ai-chip-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  width: 100%;
+}
+
+/* 교사 고민 입력 */
+.ai-input-group {
+  display: grid;
+  gap: 8px;
+}
+
+.ai-label {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.ai-textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 12px 14px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ai-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.13);
+}
+
+/* 전송 데이터 미리보기 */
+.ai-preview-box {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ai-preview-label {
+  margin: 0;
+  padding: 8px 14px;
+  background: var(--surface-strong);
+  font-size: 13px;
+  font-weight: 800;
+  border-bottom: 1px solid var(--line);
+}
+
+.ai-preview-note {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.ai-preview-code {
+  margin: 0;
+  padding: 14px;
+  background: #f9fafb;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 13px;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+/* 버튼 + 오류 */
+.ai-action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ai-error-msg {
+  margin: 0;
+  color: var(--danger);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 로딩 */
+.ai-loading {
+  margin: 0;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 15px;
+  text-align: center;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  animation: ai-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes ai-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* 결과 카드 */
+.ai-result-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ai-result-label {
+  margin: 0;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08), transparent);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.ai-result-text {
+  padding: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.ai-result-text strong {
+  color: var(--primary-dark);
+}
+
+/* 안내 문구 */
+.ai-disclaimer {
+  margin: 0;
+  padding: 14px 28px;
+  border-top: 1px solid var(--line);
+  background: #fffbeb;
+  color: var(--amber);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* 상담 전략 요청 버튼 */
+.counsel-btn {
+  margin-top: 14px;
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .ai-panel-header,
+  .ai-panel-body {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .ai-action-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 860px) {
   .login-layout,
   .student-layout,
